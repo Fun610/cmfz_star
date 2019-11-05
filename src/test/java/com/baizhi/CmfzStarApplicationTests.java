@@ -11,8 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import tk.mybatis.mapper.entity.Example;
 
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @SpringBootTest
 class CmfzStarApplicationTests {
@@ -68,7 +67,25 @@ class CmfzStarApplicationTests {
     }
     @Test
     public void suiji(){
-        System.out.println((int)((Math.random()*9+1)*100000));
+        String str = "ababcda";
+        String [] strArray= str.split("");
+        Map<String,Integer> map= new LinkedHashMap<>(strArray.length);
+        for (String s : strArray) {
+            Integer value=map.get(s);
+            if(value==null){
+                map.put(s,1);
+            }else{
+                map.put(s,value+1);
+            }
+
+        }
+        Set<Map.Entry<String, Integer>> set=map.entrySet();
+        StringBuilder stringBuilder=new StringBuilder();
+        set.forEach(item->{
+            stringBuilder.append(item.getValue()).append(item.getKey());
+        });
+        System.out.println(stringBuilder.toString());
+
     }
 
 }

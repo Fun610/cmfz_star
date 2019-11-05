@@ -14,7 +14,7 @@ public class CmfzStarApplication {
         System.out.println("-------------------");
         System.out.println("-------------------");
         System.out.println("-------------------");
-        System.out.println("-------------------");
+
         SpringApplication.run(CmfzStarApplication.class, args);
     }
 

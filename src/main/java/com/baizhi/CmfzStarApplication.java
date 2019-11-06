@@ -9,7 +9,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 public class CmfzStarApplication {
 
     public static void main(String[] args) {
-
+        System.out.println("************************")
         SpringApplication.run(CmfzStarApplication.class, args);
     }
 

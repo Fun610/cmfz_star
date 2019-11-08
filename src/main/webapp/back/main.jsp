@@ -3,6 +3,7 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@page contentType="text/html; UTF-8" pageEncoding="UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <c:set var="ff" value="${pageContext.request.contextPath}"></c:set>
 <!doctype html>
 <html lang="en">
@@ -48,7 +49,7 @@
         <!--导航条内容-->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">欢迎:<font color="aqua">${admin.nickname}</font></a></li>
+                <li><a href="#">欢迎:<font color="aqua"> <shiro:principal/> </font></a></li>
                 <li><a href="${ff}/admin/logout">退出登录 <span class="glyphicon glyphicon-log-out"></span> </a></li>
             </ul>
         </div>

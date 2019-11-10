@@ -61,6 +61,7 @@
     <div class="row">
         <div class="col-sm-2">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <shiro:hasRole name="admin">
                 <div class="panel panel-default">
                     <div class="panel-heading text-center" role="tab" id="headingOne">
                         <h4 class="panel-title">
@@ -139,6 +140,23 @@
                         </div>
                     </div>
                 </div>
+                </shiro:hasRole>
+                <shiro:hasRole name="super">
+                    <div class="panel panel-default">
+                        <div class="panel-heading text-center" role="tab" id="headingSix">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    管理员管理
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body text-center">
+                                <a href="javascript:$('#centerLayout').load('#')" class="btn btn-default">管理员列表</a>
+                            </div>
+                        </div>
+                    </div>
+                </shiro:hasRole>
             </div>
         </div>
 

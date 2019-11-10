@@ -18,8 +18,7 @@ public class AdminShiroFilter {
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         Map<String, String> map = new HashMap<>();
         map.put("/amdin/login","anon");
-        map.put("/back/main.jsp","anon");
-        map.put("/back","authc");
+        map.put("/back/*","authc");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(map);
         shiroFilterFactoryBean.setLoginUrl("/login/login.jsp");
         return shiroFilterFactoryBean;
